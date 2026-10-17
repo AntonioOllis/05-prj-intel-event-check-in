@@ -253,6 +253,13 @@ button .fas {
   display: none;
 }
 
+#celebrationMessage {
+  font-size: 18px;
+  color: #0071c5;
+  margin-top: 15px;
+  display: none;
+}
+
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
