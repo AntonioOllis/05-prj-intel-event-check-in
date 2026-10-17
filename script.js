@@ -12,6 +12,11 @@ const renewTeam = [];
 let count = 0;
 const maxCount = 50;
 
+//get the team member lists
+const waterList = document.getElementById("waterMembers");
+const zeroList = document.getElementById("zeroMembers");
+const powerList = document.getElementById("powerMembers");
+
 //handle form submission
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -28,6 +33,24 @@ form.addEventListener("submit", function (event) {
     //increment the count and log it
     count++;
     console.log("Total check ins: ", count);
+
+    //add to team array
+    if (team === "water") {
+      waterTeam.push(name);
+      const listItem = document.createElement("li");
+      listItem.textContent = name;
+      waterList.appendChild(listItem);
+    } else if (team === "zero") {
+      netTeam.push(name);
+      const listItem = document.createElement("li");
+      listItem.textContent = name;
+      zeroList.appendChild(listItem);
+    } else if (team === "power") {
+      renewTeam.push(name);
+      const listItem = document.createElement("li");
+      listItem.textContent = name;
+      powerList.appendChild(listItem);
+    }
 
     //update progress bar
     const percentage = Math.round((count / maxCount) * 100) + "%";
